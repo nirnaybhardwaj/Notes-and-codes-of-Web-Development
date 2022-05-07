@@ -59,7 +59,7 @@ console.log(friendsOfCaptionn)
 // object in object access
 
 let cityOfName = captionAmerica.address.city.cityName
-console.log(cityname)
+console.log(cityOfName)
 
 
 //change the value 
@@ -69,6 +69,9 @@ console.log(captionAmerica)
 
 
 // add the key and value
+
+captionAmerica.friends.push('natasha')
+console.log(captionAmerica)
 
 captionAmerica.movies = ['first avenger', 'civil war', 'endgame']
 console.log(captionAmerica)
