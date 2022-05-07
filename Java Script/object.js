@@ -58,7 +58,7 @@ console.log(friendsOfCaptionn)
 
 // object in object access
 
-let cityname = captionAmerica.address.city.cityName
+let cityOfName = captionAmerica.address.city.cityName
 console.log(cityname)
 
 
