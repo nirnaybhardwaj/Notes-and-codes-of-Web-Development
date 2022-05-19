@@ -15,4 +15,4 @@ const cp = require("child_process")
 
 
 // run different file
-console.log('output ' + cp.execSync('node test.js'))
+console.log('output ' + cp.execSync('node test1.js'))
