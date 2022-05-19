@@ -8,7 +8,10 @@
 
 
 // fs = File System Module 
+const { Console } = require('console')
 const fs = require('fs')
+
+const path = require('path')
 
 
 // // 1. File ko Read kaise kre (Reading A File)
@@ -77,9 +80,37 @@ const fs = require('fs')
 
 
 //In Scope
-let folderContent = fs.readdirSync('myDirectory')
-console.log(folderContent)
+// let folderContent = fs.readdirSync('myDirectory')
+// console.log(folderContent)
 
 // Out of scope and double back \ will be added node js rule
-let folderContent1 = fs.readdirSync('D:\\FJP-8\\Java Script')
-console.log(folderContent1)
+// let folderContent1 = fs.readdirSync('D:\\FJP-8\\Java Script')
+// console.log(folderContent1)
+
+
+
+// Copy file from one folder to another
+// yaha use hoga path module
+
+let srcFilePath = 'D:\\FJP-8\\NodeJS\\node_packages\\myDirectory\\f1.txt'
+
+let destinationFolder = 'D:\\FJP-8\\Java Script'
+
+// basename = actual name of a file 
+let toBeCopiedFile = path.basename(srcFilePath)
+console.log(toBeCopiedFile) // f1.txt
+
+//join  = join the path 
+let destPathComplete = path.join(destinationFolder, toBeCopiedFile)
+console.log(destPathComplete)
+
+//copy file through file system
+fs.copyFileSync(srcFilePath, destPathComplete)
+console.log('file copied')
+
+// It cut the file from previous folder and copy to new folder
+fs.unlinkSync(srcFilePath)
+console.log('cut file')
+
+
+
