@@ -33,10 +33,12 @@ var c =2300000
 
 
 
-let keyword
+// let keyword
 
 
 let d = 'pepcoding'
+
+d = 'nirnay'
 
 // let keyword is not redeclared 
 
