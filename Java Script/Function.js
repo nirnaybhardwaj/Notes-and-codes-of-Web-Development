@@ -100,3 +100,14 @@ function test(a, b){
 }
 let ans = test(4, 5)
 console.log(ans)
+
+// FACTORIAL 
+
+// function fact(a){
+//     let ans = 1;
+//     for(let i = a; i > 0; i--){
+//         ans = ans * i;
+//     }
+//     console.log(ans);
+// }
+// fact(5);
