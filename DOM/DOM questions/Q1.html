@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Say Hello</button>
+
+    <script>
+      //Q1 on Clicking the Button append hello to the page
+
+    //   1) Select the button = [querySelector]
+    // querySelector = this method is used to identify and select the element
+
+    let btn = document.querySelector('button')// we can use class and id also
+
+    // if we click button it is known as click event 
+
+    btn.addEventListener('click', function(){
+        //check button is clicked
+
+        console.log('button clicked')
+
+        //Method - create element lets you create a new Element in the DOM
+
+        let divElem = document.createElement('div')
+
+        // inner text is a property by which you can access and Add or Remove Text inside an element
+
+        divElem.innerText = 'Hello!! My Name is Nirnay'
+
+        //select the body
+        let body = document.querySelector('body')
+
+        // add the child to the body
+        //this method allows you to add new Children inside your selected element
+        body.appendChild(divElem)
+    })
+
+    </script>
+  </body>
+</html>
