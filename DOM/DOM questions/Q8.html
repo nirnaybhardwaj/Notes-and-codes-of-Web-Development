@@ -16,7 +16,44 @@
 
       //   Solution:
 
-         
+        //  let button = document.querySelector('.double')
+
+        //  button.addEventListener('click', function(){
+        //    button.style.display = 'none'
+          
+
+        //    let element = document.createElement('button')
+        //    element.innerText = 'double1'
+
+        //    let element2 = document.createElement('button')
+        //    element2.innerText = 'double2'
+
+        //    let body = document.querySelector('body')
+
+        //    body.appendChild(element)
+        //    body.appendChild(element2)
+           
+        //  })
+
+
+        document.querySelector('#doubleHolder').addEventListener('click', function(e){
+          //contains gives that in classlist there is class or not gives true or false
+
+          if(e.target.classList.contains('double')){
+            let btn = document.createElement('button');
+            btn.setAttribute('class', 'double')
+            btn.innerHTML = 'firstButton'
+
+            let btn2 = document.createElement('button');
+            btn2.setAttribute('class', 'double')
+            btn2.innerHTML = 'secondButton'
+
+            e.currentTarget.appendChild(btn)
+            e.currentTarget.appendChild(btn2)
+            e.currentTarget.removeChild(e.target)
+          }
+        })
+
 
 
       

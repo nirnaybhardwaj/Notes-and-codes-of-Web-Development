@@ -1,44 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      #pass {
-        display: block;
-        margin: auto;
-        margin-top: 10rem;
-        width: 25rem;
-        height: 3rem;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    #pass {
+      display: block;
+      margin: auto;
+      margin-top: 10rem;
+      width: 25rem;
+      height: 3rem;
+    }
+
+    p {
+      text-align: center;
+      font-size: 3rem;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="pass" />
+  <p>Caps on!</p>
+  <script>
+    //Q- Write a script which keeps checking the password being entered.
+    //It should check if capslock is on or off
+    //if its on it should not allow to type and show "caps on" on screen,
+    // also it should only allow to type if the shift in pressed down.
+
+    //   Solution :
+
+    let inputField = document.querySelector('#pass')
+
+    let warningText = document.querySelector('p')
+
+    let isShift = false
+
+    //keypress means once we click the key button
+    inputField.addEventListener('keypress', function (e) {
+
+      // getModifierState - is iused when capslock is on
+
+      if (e.getModifierState('CapsLock')) {
+
+        warningText.style.display = 'block'
+
+        //preventDefault = kisi bhi property ki default property ki kr skta 
+        //for eg - hum type nhi kr skte isme 
+
+        e.preventDefault()
+      }
+      else {
+        warningText.style.display = 'none'
       }
 
-      p {
-        text-align: center;
-        font-size: 3rem;
-        display: none;
+      if(!isShift) e.preventDefault()
+    })
+
+    // keydown means hold the key
+
+    document.addEventListener('keydown', function (e) {
+
+      // e.key gives the which key we pressed
+
+      if (e.key === 'Shift') {
+        isShift = true
       }
-    </style>
-  </head>
-  <body>
-    <input type="text" id="pass" />
-    <p>Caps on!</p>
-    <script>
-      //Q- Write a script which keeps checking the password being entered.
-      //It should check if capslock is on or off
-      //if its on it should not allow to type and show "caps on" on screen,
-      // also it should only allow to type if the shift in pressed down.
 
-      //   Solution :
-
-      
+    })
 
 
+    // keyup means we stop to press hold the key
+
+    document.addEventListener('keyup', function (e) {
+
+      // e.key gives the which key we pressed
+
+      if (e.key === 'Shift') {
+        isShift = false
+      }
+
+    })
 
 
-      
-  
-    </script>
-  </body>
+
+  </script>
+</body>
+
 </html>
