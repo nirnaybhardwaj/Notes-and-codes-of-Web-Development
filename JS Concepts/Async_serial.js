@@ -1,7 +1,7 @@
 
 // -----   CHECK NOTEBOOK FOR PROPER UNDERSTANDING ----- //
 
-            // ------- SERIAL ORDER ------- //
+             // ------- SERIAL ORDER ------- //
 
 console.log("before")
 
